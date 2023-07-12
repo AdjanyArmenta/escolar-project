@@ -1,0 +1,12 @@
+package edu.uady.coa.coaapi.repository;
+
+import edu.uady.coa.coaapi.entity.PlanEstudio;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+import java.util.Optional;
+
+public interface PlanEstudioRepository extends JpaRepository<PlanEstudio,Long> {
+    Optional<PlanEstudio> findByLicenciatura_RevoeAndAndMateriaClaveMateria(String revoe, String materia);
+    List<PlanEstudio> findPlanEstudioByLicenciatura_Id(Long licenciatura_id);
+}
